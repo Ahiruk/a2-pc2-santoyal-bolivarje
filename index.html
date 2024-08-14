@@ -6,20 +6,22 @@
     <title>Actividad Docker</title>
 </head>
 <body>
-    <header>
-        <h1>Actividad 2</h1>
-        <h3>Desarrollo con Docker compose</h3>
-    </header>
-    <section>
-        <h1>Links</h1>
-        <div>
-            <a href="/c2">Link</a>
-            <a href="/c3">Zelda</a>
-        </div>
-    </section>
-    <footer>
-        <p>Desarrollado por: <strong>Jorge Eduardo Bolívar</strong> y <strong>Luisa Guzman</strong></p>
-    </footer>
+    <div class="box-container">
+        <header>
+            <h1>Actividad 2</h1>
+            <h2>Desarrollo con Docker compose</h2>
+        </header>
+        <section>
+            <h3>Links</h3>
+            <div class="link-container">
+                <a href="/c2">App1</a>
+                <a href="/c3">App2</a>
+            </div>
+        </section>
+        <footer>
+            <p>Desarrollado por: <strong>Jorge Eduardo Bolívar</strong> y <strong>Luisa Guzmán</strong></p>
+        </footer>
+    </div>
 </body>
 </html>
 
@@ -32,16 +34,89 @@
         height: 100vh;
         margin: 0;
         background-color: rgba(0, 0, 0, 0.711);
+        text-align: center;
     }
 
-    h1 {
-        background-color: lightcoral;
+    .box-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(104, 195, 200);
+        padding: 5%;
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 0 10px  rgb(255, 255, 255),
+                    0 0 10px inset rgb(0, 0, 0);
+        gap: 25px;
+    }
+
+    header {
+        width: 100%;
+        padding: 10px;
+    }
+
+    header h1 {
+        background-color: rgb(107, 89, 246);
         color: white;
+        border: none;
+        border-radius: 10px;
+    }
+
+    header h2 {
+        color: rgb(107, 89, 246);
+    }
+
+    section {
+        width: 30%;
+        padding: 10px;
+    }
+
+    section h3 {
+        background-color: rgb(107, 89, 246);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+    }
+
+    .link-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
     }
 
     a {
         display: block;
         margin-bottom: 10px;
+        padding: 5px 10px;
+        background-color: rgb(107, 89, 246);
+        color: white;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        box-shadow: 0 0 5px rgb(0, 0, 0);
+        transition: box-shadow 0.1s ease; 
+    }
+
+    a:hover {
+        box-shadow: 0 0 10px rgb(0, 0, 0);
+    }
+
+    a:active {
+        box-shadow: 0 0 5px rgb(0, 0, 0);
+    }
+
+    footer {
+        width: 100%;
+        padding: 10px;
+    }
+
+    footer p {
+        color: rgb(107, 89, 246);
+        font-size: 18px;
     }
 
 </style>
