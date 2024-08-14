@@ -1,0 +1,23 @@
+services:
+  proxy:
+    image: nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf  # Nginx configuration
+      - ./index.html:/usr/share/nginx/html/index.html  # Map local index.html to Nginx's default root
+    depends_on:
+      - app1
+      - app2
+
+  app1:
+    build:
+      context: ./app1
+    ports:
+      - "8000:8000"
+
+  app2:
+    build:
+      context: ./app2
+    ports:
+      - "8001:8001"
